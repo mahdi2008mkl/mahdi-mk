@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mahdi mk</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('jjjjjjj.jpg'); /* تأكد من أن صورة 'jjjjjjj.jpg' موجودة في نفس المسار */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .password-input {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="passwordForm">
+            <input class="password-input" type="text" maxlength="1" id="digit1" required>
+            <input class="password-input" type="text" maxlength="1" id="digit2" required>
+            <input class="password-input" type="text" maxlength="1" id="digit3" required>
+            <input class="password-input" type="text" maxlength="1" id="digit4" required>
+            <br>
+            <input type="submit" value="تسجيل الدخول">
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إرسال النموذج الافتراضي
+            
+            // تجميع أرقام كلمة المرور
+            var digit1 = document.getElementById('digit1').value;
+            var digit2 = document.getElementById('digit2').value;
+            var digit3 = document.getElementById('digit3').value;
+            var digit4 = document.getElementById('digit4').value;
+            
+            var password = digit1 + digit2 + digit3 + digit4;
+            
+            if (password === '2008') {
+                window.location.href = 'https://example.com'; // استبدل 'https://example.com' بالرابط الذي ترغب في توجيه المستخدم إليه
+            } else {
+                document.getElementById('errorMessage').textContent = 'كلمة المرور خاطئة. الرجاء إعادة المحاولة.';
+            }
+        });
+    </script>
+</body>
+</html>
